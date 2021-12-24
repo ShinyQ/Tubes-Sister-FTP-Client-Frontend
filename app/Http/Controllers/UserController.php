@@ -18,7 +18,7 @@ class UserController extends Controller
     }
 
     public function register(Request $request){
-        $response = Http::post('https://rpc.krobot.my.id/register', [
+        $response = Http::post( env('RPC_URL'). 'register', [
             'username' => $request->username,
             'password' => $request->password
         ]);
@@ -27,7 +27,7 @@ class UserController extends Controller
     }
 
     public function login(Request $request){
-        $response = Http::post('https://rpc.krobot.my.id/login', [
+        $response = Http::post(env('RPC_URL'). 'login', [
             'username' => $request->username,
             'password' => $request->password
         ]);
