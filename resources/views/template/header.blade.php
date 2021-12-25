@@ -31,7 +31,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/user/home">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
             <div class="sidebar-brand-text mx-3">FTP Dashboard</div>
         </a>
 
@@ -49,8 +49,8 @@
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">File</h6>
-                    <a class="collapse-item" href="login.html">List Seluruh File</a>
-                    <a class="collapse-item" href="404.html">File Saya</a>
+                    <a class="collapse-item" href="/file">List Seluruh File</a>
+                    <a class="collapse-item" href="/">File Saya</a>
                     <div class="collapse-divider"></div>
                 </div>
             </div>

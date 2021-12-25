@@ -13,8 +13,14 @@ class UserController extends Controller
             return redirect('/user/login');
         }
 
+        $response = Http::post(env('RPC_URL'). 'user_file_list', [
+            'id' => $request->session()->get('id')
+        ]);
+
+        $files =  $response->json()['data'];
         $title = 'User | Homepage';
-        return view('index', compact('title'));
+
+        return view('index', compact('title', 'files'));
     }
 
     public function register(Request $request){

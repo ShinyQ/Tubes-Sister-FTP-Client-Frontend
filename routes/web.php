@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,4 +25,8 @@ Route::group(['prefix' => 'user'], function() {
     Route::get('/login', [UserController::class, 'login_view']);
     Route::post('/login',[UserController::class, 'login']);
     Route::get('/logout',[UserController::class, 'logout']);
+});
+
+Route::group(['prefix' => 'file'], function() {
+    Route::get('/', [FileController::class, 'index']);
 });
