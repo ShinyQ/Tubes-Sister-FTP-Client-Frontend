@@ -64,7 +64,7 @@ class FileController extends Controller
             return redirect()->back()->with('error', 'Terdapat Masalah Pada Server');
         }
 
-        $link = 'http://localhost:8000/files/'. $response->json()['data'];
+        $link = env('REST_URL'). $response->json()['data'];
 
         return response()->streamDownload(function () use ($link) {
             echo file_get_contents($link);
