@@ -41,6 +41,7 @@ class UserController extends Controller
         if($response->ok()){
             $request->session()->put('id', $response->json()['data']['id']);
             $request->session()->put('username', $response->json()['data']['username']);
+            $request->session()->put('role', $response->json()['data']['role']);
         } else {
             return redirect()->back()->with('error', 'Username Atau Password Anda Salah');
         }

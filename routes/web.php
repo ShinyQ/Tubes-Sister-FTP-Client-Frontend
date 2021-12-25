@@ -29,4 +29,6 @@ Route::group(['prefix' => 'user'], function() {
 
 Route::group(['prefix' => 'file'], function() {
     Route::get('/', [FileController::class, 'index']);
+    Route::post('/upload', [FileController::class, 'upload']);
+    Route::get('/download/{id}', [FileController::class, 'download']);
 });

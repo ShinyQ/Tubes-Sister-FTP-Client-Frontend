@@ -3,6 +3,12 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-black"><b>List File Pada FTP Server</b></h1>
 
+    @if (\Session::has('error'))
+        <div class="mt-4 alert alert-danger">
+            <div style="text-align: center;">{!! \Session::get('error') !!}</div>
+        </div>
+    @endif
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4 mt-5">
         <div class="card-header py-3">
@@ -14,7 +20,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead style="text-align: center">
                     <tr>
-                        <th>No</th>
+                        <th>No.</th>
                         <th>Nama File</th>
                         <th>Uploader</th>
                         <th>Ukuran File</th>
@@ -25,14 +31,14 @@
                     <tbody style="text-align: center">
                     @foreach($files as $i => $file)
                     <tr>
-                        <td>{{ $i }}</td>
+                        <td>{{ $i+1 }}</td>
                         <td>{{ $file['fileName'] }}</td>
                         <td>{{ $file['username'] }}</td>
                         <td>{{ round($file['size'] / 1024, 2) }} kB</td>
                         <td>{{ $file['createdAt'] }}</td>
                         <td>
                             <div style="text-align: center;">
-                                <a href="#" class="btn btn-success btn-icon-split">
+                                <a href="/file/download/{{ $file['id'] }}" class="btn btn-success btn-icon-split">
                                     <span class="text">Download</span>
                                 </a>
                             </div>
