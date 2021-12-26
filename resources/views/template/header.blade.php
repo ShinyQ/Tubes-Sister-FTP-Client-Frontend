@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="icon" type="image/x-icon" href="https://image.flaticon.com/icons/png/512/1183/1183650.png">
     <title>{{ $title }}</title>
 
     <!-- Custom fonts for this template-->
@@ -54,7 +54,8 @@
                     <a class="collapse-item" href="/file">File Server</a>
                     @if(Session::get('role') == 'admin')
                         <h6 class="collapse-header">Admin</h6>
-                        <a class="collapse-item" href="/">Statistik FTP</a>
+                        <a class="collapse-item" href="/user/statistic">Statistik FTP</a>
+                        <a class="collapse-item" href="/user/log">Log FTP</a>
                     @endif
                     <div class="collapse-divider"></div>
                 </div>
