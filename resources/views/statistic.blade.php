@@ -79,7 +79,7 @@
 
     const data = [trace0, trace1, trace2];
     const layout = {
-        title: 'Grafik Total Download Dan Upload Harian',
+        title: 'Grafik Keseluruhan Download Dan Upload Harian',
         xaxis: {
             title: 'Tanggal'
         },

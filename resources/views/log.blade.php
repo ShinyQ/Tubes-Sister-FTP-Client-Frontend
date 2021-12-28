@@ -30,7 +30,7 @@
                             <td>{{ $log['username'] }}</td>
                             <td>{{ $log['filename'] }}</td>
                             <td>{{ $log['action'] }}</td>
-                            <td>{{ $log['tanggal'] }}</td>
+                            <td>{{ $log['datetime'] }}</td>
                         </tr>
                     @endforeach
                     </tbody>

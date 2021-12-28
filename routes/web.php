@@ -26,6 +26,8 @@ Route::group(['prefix' => 'user'], function() {
     Route::get('/login', [UserController::class, 'login_view']);
     Route::post('/login',[UserController::class, 'login']);
     Route::get('/logout',[UserController::class, 'logout']);
+    Route::get('/register',[UserController::class, 'register_view']);
+    Route::post('/register',[UserController::class, 'register']);
     Route::get('/statistic', [StatisticController::class, 'statistic']);
     Route::get('/log', [StatisticController::class, 'log']);
 });

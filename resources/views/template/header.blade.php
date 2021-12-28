@@ -54,6 +54,7 @@
                     <a class="collapse-item" href="/file">File Server</a>
                     @if(Session::get('role') == 'admin')
                         <h6 class="collapse-header">Admin</h6>
+                        <a class="collapse-item" href="/user/register">Registrasi User</a>
                         <a class="collapse-item" href="/user/statistic">Statistik FTP</a>
                         <a class="collapse-item" href="/user/log">Log FTP</a>
                     @endif

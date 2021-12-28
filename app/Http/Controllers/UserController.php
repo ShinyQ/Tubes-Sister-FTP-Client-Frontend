@@ -29,7 +29,11 @@ class UserController extends Controller
             'password' => $request->password
         ]);
 
-        return $response->ok();
+        if(!$response->ok()){
+            return redirect()->back()->with('error', 'Terjadi kesalahan pada server');
+        }
+
+        return redirect()->back()->with('success', 'Sukses melakukan pendaftaran pengguna');
     }
 
     public function login(Request $request){
@@ -55,6 +59,17 @@ class UserController extends Controller
         }
 
         return view('login');
+    }
+
+    public function register_view(Request $request){
+        if ($request->session()->exists('username') && $request->session()->exists('role') != 'admin') {
+            return redirect('/');
+        }
+
+        $title = 'User | Registrasi User';
+        $users = Http::get(env('RPC_URL'). 'get_users')->json()['data'];
+
+        return view('register', compact('title', 'users'));
     }
 
     public function logout(){
